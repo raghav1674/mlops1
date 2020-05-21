@@ -2,7 +2,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 import pandas as pd
-
+#new
 model=LinearRegression() #creating the model
 
 dataset=pd.read_csv("../data_files/Salary_Data.csv") #loading csv file
