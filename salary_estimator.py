@@ -16,9 +16,9 @@ X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=20
 
 
 model.fit(X_train,y_train)  #training the model
+y_pred=model.predict(X_test,y_test)
 
-
-X_test=sc.transform(X_test)
+# X_test=sc.transform(X_test)
 
 from sklearn.metrics import r2_score
 print(r2_score(y_test.values,y_pred))
