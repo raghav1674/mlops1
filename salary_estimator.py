@@ -5,7 +5,7 @@ import pandas as pd
 #new
 model=LinearRegression() #creating the model
 
-dataset=pd.read_csv("/my_dlws/all_storage/Salary_Data.csv") #loading csv file
+dataset=pd.read_csv("Salary_Data.csv") #loading csv file
 x=dataset["YearsExperience"]
 y=dataset["Salary"]
 
