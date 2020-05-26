@@ -2,7 +2,7 @@ from keras.backend import clear_session
 clear_session()
 import pandas as pd
 
-df = pd.read_csv('/my_dlws/all_storage/wines.csv')
+df = pd.read_csv('wines.csv')
 
 
 y=df["Class"]
@@ -73,9 +73,8 @@ model.fit(X_train,y_train,epochs=50)
 
 y_pred=model.predict(X_test)
 
-
-print(model.evaluate(X_test,y_test))
-
+scores=model.evaluate(X_test,y_test)
+print(scores[1])
 y_pred.round()
 
 y_test.values.astype("float64")
