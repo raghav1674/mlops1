@@ -2,7 +2,7 @@ from keras.backend import clear_session
 clear_session()
 import pandas as pd
 
-df = pd.read_csv('/my_dlws/wines.csv')
+df = pd.read_csv('/my_dlws/all_storage/wines.csv')
 
 
 y=df["Class"]
@@ -13,9 +13,9 @@ print(df.columns)
 
 
 X=df[['Alcohol', 'Malic_acid', 'Ash', 'Alcalinity_of_ash',
-       'Magnesium', 'Total_phenols', 'Flavanoids', 'Nonflavanoid_phenols',
-       'Proanthocyanins', 'Color_intensity', 'Hue',
-       'OD280-OD315_of_diluted_wines', 'Proline']]
+'Magnesium', 'Total_phenols', 'Flavanoids', 'Nonflavanoid_phenols',
+'Proanthocyanins', 'Color_intensity', 'Hue',
+'OD280-OD315_of_diluted_wines', 'Proline']]
 
 
 
@@ -29,32 +29,29 @@ from keras.models import Sequential
 model  =  Sequential()
 
 
-#from sklearn.preprocessing import StandardScaler
 
-#sc=StandardScaler()
-#X_std=sc.fit_transform(X)
-#print(X_std)
 
 
 
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y_cat,test_size=0.3,random_state=50)
 
+
 from keras.layers import Dense
 
-model.add(Dense(units=50 , input_shape=(13,), 
-                activation='relu', 
-                kernel_initializer='glorot_uniform' ))
+model.add(Dense(units=50 , input_shape=(13,),
+activation='relu',
+kernel_initializer='glorot_uniform' ))
 
 model.summary()
 
-model.add(Dense(units=30, 
-                 activation='relu'))
+model.add(Dense(units=30,
+activation='relu'))
 
 model.summary()
 
-model.add(Dense(units=20, 
-                activation='relu'))
+model.add(Dense(units=20,
+activation='relu'))
 
 model.summary()
 
@@ -64,18 +61,21 @@ model.summary()
 
 from keras.optimizers import Adam
 
-model.compile(optimizer=Adam(lr=0.001),  
-              loss='categorical_crossentropy',
-             metrics=['accuracy']
-             )
+model.compile(optimizer=Adam(lr=0.001),
+loss='categorical_crossentropy',
+metrics=['accuracy']
+)
 
 model.fit(X_train,y_train,epochs=50)
 
 
 
-print(model.evaluate(X_test,y_test))
 
 y_pred=model.predict(X_test)
+
+
+print(model.evaluate(X_test,y_test))
+
 y_pred.round()
 
 y_test.values.astype("float64")
@@ -88,3 +88,5 @@ clear_session()
 
 
 
+#ANN_wines.py
+#ANN_wines.py
