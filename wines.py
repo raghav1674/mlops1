@@ -4,7 +4,6 @@ import pandas as pd
 
 df = pd.read_csv('wines.csv')
 
-
 y=df["Class"]
 
 y_cat = pd.get_dummies(y)
@@ -25,7 +24,7 @@ print(X.head())
 
 
 from keras.models import Sequential
-
+#model
 model  =  Sequential()
 
 
@@ -87,5 +86,5 @@ clear_session()
 
 
 
-#ANN_wines.py
+
 #ANN_wines.py
