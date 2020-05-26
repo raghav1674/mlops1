@@ -19,6 +19,7 @@ model.fit(X_train,y_train)  #training the model
 y_pred=model.predict(X_test)
 
 
+
 from sklearn.metrics import r2_score
 print(r2_score(y_test.values,y_pred))
 
