@@ -11,7 +11,7 @@ y_cat = pd.get_dummies(y)
 
 print(df.columns)
 
-
+#features
 X=df[['Alcohol', 'Malic_acid', 'Ash', 'Alcalinity_of_ash',
 'Magnesium', 'Total_phenols', 'Flavanoids', 'Nonflavanoid_phenols',
 'Proanthocyanins', 'Color_intensity', 'Hue',
